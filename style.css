@@ -1,0 +1,14 @@
+#canvas {
+    display: flex;
+    width: 160px;
+    height: 160px;
+    border: 3px solid black;
+    flex-wrap: wrap;
+}
+#canvas > div {
+    background-color: red;
+}
+button {
+    width: 100px;
+    height: 30px;
+}
