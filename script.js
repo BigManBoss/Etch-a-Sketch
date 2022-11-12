@@ -9,7 +9,9 @@ const insertPixels = n => {
     let parentSize = parseFloat(getComputedStyle(canvas).height);   //finds parent height
     for(let i = 0;i < n*n; i++) {
         const pixel = document.createElement('div');
-        let divSize = parentSize / n;
+        let divSize1 = parentSize / n;
+        let divSize = Math.floor(divSize1*30)/30;
+        console.log(divSize);
         pixel.setAttribute('style', `height= ${divSize}px; width: ${divSize}px;`);  //sets child height
         pixel.classList.add('pixel');
         canvas.appendChild(pixel);
@@ -25,17 +27,20 @@ buttons.forEach(button => {
 });
 */
 
+//pixell input
+let pixelInput = () => {
+    const inputSize = document.getElementById('number');
+    insertPixels(inputSize.value);
+};
+
 //adding eventlisteners to child divs
 const colorChange = () => {
     returnPixels();
     pixels.forEach(pixel => {
         let attr = pixel.getAttribute('style'); //finds already existing style values
-        pixel.addEventListener('mouseover', () => pixel.setAttribute('style', `${attr} background-color: red;`));
+        const inputColor = document.getElementById('color');
+        let color = inputColor.value;
+        console.log(color);
+        pixel.addEventListener('mouseover', () => pixel.setAttribute('style', `${attr} background-color: ${color};`));
     });
-};
-
-//pixell input
-let pixelInput = () => {
-    const input = document.querySelector('input');
-    insertPixels(input.value);
 };

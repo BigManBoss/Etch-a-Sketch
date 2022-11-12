@@ -10,23 +10,28 @@
 </head>
 <body>
     <header>
-        <p>test</p>
+        <p>Etch-a-Sketch</p>
     </header>
     
-    <main>
-        <div id="canvas">
-
+    <div class="main flexparent">
+        <div class="holder flexparent">
+            <div class="int-divs flex" id="input">
+                <p>Color:</p>
+                <input type="color" id="color"><br>
+                <p>Canvas Size:</p>
+                <input type="number" placeholder="Insert a number" id="number"><br>
+                <input type="submit" value="Submit" onclick="pixelInput()"><br>
+                <p>ps: you aren't a good artist!</p>
+            </div>
+            <div class="int-divs flexparent flex" id="canvas"></div>
         </div>
-        <br>
-        <br>
-        <div id="input">
-            <input type="number" placeholder="Insert a number"><br>
-            <input type="submit" value="Submit" onclick="pixelInput()"><br>
-        </div>
-    </main>
+    </div>
 
-    <footer class="copyright" style="background-color: red;">
+    <footer class="copyright">
         <p>Blah Blah CopyRight Blah Blah</p>
+        <a href="https://github.com/BigManBoss">
+            <img src="images/GitHublogo.png" alt="GitHub logo" class="github">
+        </a>
     </footer>
 </body>
 </html>
